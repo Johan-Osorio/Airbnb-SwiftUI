@@ -1,0 +1,44 @@
+//
+//  ContentView.swift
+//  airbnb-clone-a
+//
+//  Created by Linder Anderson Hassinger Solano    on 3/11/23.
+//
+
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 50) {
+                    Category(icon: "airplane.circle", text: "OMG!")
+                    Category(icon: "beach.umbrella", text: "Beaches")
+                    Category(icon: "house.and.flag", text: "Tiny homes")
+                    Category(icon: "figure.golf", text: "Golfing")
+                    Category(icon: "photo.tv", text: "Amazing")
+                }
+            }
+            .padding()
+            
+            Divider()
+            
+            List {
+                Card()
+                Card()
+                Card()
+            }
+            .listStyle(.inset)
+            .scrollIndicators(.hidden)
+            .padding([.trailing, .leading])
+            
+            Spacer()
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
